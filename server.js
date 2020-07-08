@@ -8,8 +8,6 @@ const handler = require('./handlers/handlers');
 // require users.js, the database of users
 const { users } = require('./data/users');
 
-let currentUser = {};
-
 // -----------------------------------------------------
 // server endpoints
 const app = express();
@@ -20,7 +18,10 @@ app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 
 // endpoints
+// home page endpoint
 app.get('/', handler.handleHomepage);
+// profile page endpoint
+app.get('/users/:_id', handler.handleProfilePage);
 
 // a catchall endpoint that will send the 404 message.
 app.get('*', handler.handleFourOhFour);
