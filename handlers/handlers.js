@@ -1,6 +1,9 @@
+// require users.js, the database of users
+const { users } = require('../data/users');
+
 // declare the homepage handler
 const handleHomepage = (req, res) => {
-    res.status(200).render('pages/homepage');
+    res.status(200).render('pages/homepage', { users: users });
 };
 
 // declare the 404 handler

@@ -5,7 +5,7 @@ const morgan = require('morgan');
 
 // require handler.js
 const handler = require('./handlers/handlers');
-
+// require users.js, the database of users
 const { users } = require('./data/users');
 
 let currentUser = {};
