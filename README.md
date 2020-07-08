@@ -12,3 +12,11 @@
 - Screenshot for the profile page
 
 <img src="./assets/screenshot-2.png" />
+
+## Exercise 3 - The Sign in page
+
+- Screenshots for the sign in process
+
+| Sign in                                 | Redirect to your Profile page           |
+| --------------------------------------- | --------------------------------------- |
+| <img src="./assets/screenshot-3.png" /> | <img src="./assets/screenshot-4.png" /> |

@@ -22,6 +22,9 @@ app.set('view engine', 'ejs');
 app.get('/', handler.handleHomepage);
 // profile page endpoint
 app.get('/users/:_id', handler.handleProfilePage);
+// signin page endpoint
+app.get('/signin', handler.handleSignin);
+app.post('/getname', handler.handleName);
 
 // a catchall endpoint that will send the 404 message.
 app.get('*', handler.handleFourOhFour);
