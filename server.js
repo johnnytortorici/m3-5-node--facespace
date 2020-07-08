@@ -3,26 +3,26 @@
 const express = require('express');
 const morgan = require('morgan');
 
+// require handler.js
+const handler = require('./handlers/handlers');
+
 const { users } = require('./data/users');
 
 let currentUser = {};
 
-// declare the 404 function
-const handleFourOhFour = (req, res) => {
-  res.status(404).send("I couldn't find what you're looking for.");
-};
-
 // -----------------------------------------------------
 // server endpoints
-express()
-  .use(morgan('dev'))
-  .use(express.static('public'))
-  .use(express.urlencoded({ extended: false }))
-  .set('view engine', 'ejs')
+const app = express();
 
-  // endpoints
+app.use(morgan('dev'));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
+app.set('view engine', 'ejs');
 
-  // a catchall endpoint that will send the 404 message.
-  .get('*', handleFourOhFour)
+// endpoints
+app.get('/', handler.handleHomepage);
 
-  .listen(8000, () => console.log('Listening on port 8000'));
+// a catchall endpoint that will send the 404 message.
+app.get('*', handler.handleFourOhFour);
+
+app.listen(8000, () => console.log('Listening on port 8000'));
