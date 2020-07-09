@@ -31,3 +31,4 @@
   color: var(--primary-color);
   cursor: pointer;
 }
+a { text-decoration: none; }

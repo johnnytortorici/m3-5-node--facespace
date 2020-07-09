@@ -7,5 +7,16 @@
 </head>
 <body>
   <header class="header">
+    <a href="/" target="_self">
       <h1 class='site-title'>Facespace</h1>
+    </a>
+    
+    <button class="signin-button" onclick="location.href='/signin'">
+      <% if (currentUser.name !== undefined) { %>
+        <%= `Hello, ${currentUser.name}` %>
+      <% } else { %>
+        Sign In
+      <% } %>
+    </button>
+      
   </header>
