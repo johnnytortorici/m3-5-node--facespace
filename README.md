@@ -20,3 +20,13 @@
 | Sign in                                 | Redirect to your Profile page           |
 | --------------------------------------- | --------------------------------------- |
 | <img src="./assets/screenshot-3.png" /> | <img src="./assets/screenshot-4.png" /> |
+
+## Exercise 4 - Tying all of the pages together
+
+- Display users name with greeting after sign in
+
+<img src="./assets/screenshot-5.png" />
+
+- Add ribbon to friends on homepage
+
+<img src="./assets/screenshot-6.png" />

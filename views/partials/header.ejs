@@ -11,12 +11,14 @@
       <h1 class='site-title'>Facespace</h1>
     </a>
     
-    <button class="signin-button" onclick="location.href='/signin'">
       <% if (currentUser.name !== undefined) { %>
-        <%= `Hello, ${currentUser.name}` %>
+        <button class="signin-button" onclick="location.href='/users/<%= currentUser._id %>'">
+          <%= `Hello, ${currentUser.name}` %>
+        </button>
       <% } else { %>
-        Sign In
+        <button class="signin-button" onclick="location.href='/signin'">
+          Sign In
+        </button>
       <% } %>
-    </button>
       
   </header>

@@ -35,7 +35,11 @@ const handleProfilePage = (req, res) => {
 
 // declare the signin page handler
 const handleSignin = (req, res) => {
-    res.status(200).render('pages/signin', { currentUser: currentUser });
+    if (currentUser.name !== undefined) {
+        res.status(200).redirect(`/users/${currentUser._id}`);
+    } else {
+        res.status(200).render('pages/signin', { currentUser: currentUser });
+    }
 };
 
 // declare name handler for signin form
