@@ -30,3 +30,10 @@
 - Add ribbon to friends on homepage
 
 <img src="./assets/screenshot-6.png" />
+
+## Stretch Feature - Logout
+
+- Added the ability to logout
+- Updated the color palette
+
+<img src="./assets/screenshot-7.png" />

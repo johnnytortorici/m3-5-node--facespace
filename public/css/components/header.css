@@ -31,4 +31,9 @@
   color: var(--primary-color);
   cursor: pointer;
 }
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
+.links {
+  display: flex;
+}

@@ -34,7 +34,7 @@ const handleProfilePage = (req, res) => {
 };
 
 // declare the signin page handler
-const handleSignin = (req, res) => {
+const handleSigninPage = (req, res) => {
     if (currentUser.name !== undefined) {
         res.status(200).redirect(`/users/${currentUser._id}`);
     } else {
@@ -42,8 +42,8 @@ const handleSignin = (req, res) => {
     }
 };
 
-// declare name handler for signin form
-const handleName = (req, res) => {
+// declare handler for signin form post
+const handleLogin = (req, res) => {
     const firstName = req.body.firstName.toLowerCase();
     const userLogin = users.find( (user) => {
         return user.name.toLowerCase() === firstName;
@@ -57,9 +57,15 @@ const handleName = (req, res) => {
     }
 };
 
+// declare handler for logout form post
+const handleLogout = (req, res) => {
+    currentUser = {};
+    res.status(200).redirect('/signin');
+};
+
 // declare the 404 handler
 const handleFourOhFour = (req, res) => {
     res.status(404).send("I couldn't find what you're looking for.");
 };
 
-module.exports = { handleHomepage, handleProfilePage, handleSignin, handleName, handleFourOhFour };
+module.exports = { handleHomepage, handleProfilePage, handleSigninPage, handleLogin, handleLogout, handleFourOhFour };
